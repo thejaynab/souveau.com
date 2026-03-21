@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: "How Olmo Studio collects, uses, and protects your personal information."
+description: "How Souveau collects, uses, and protects your personal information."
 ---
 
 > **Note:** This document is a placeholder for demonstration purposes only. It is not legally binding and should be replaced with actual legal policies tailored to your business needs.
@@ -9,7 +9,7 @@ description: "How Olmo Studio collects, uses, and protects your personal informa
 
 ## 1. Introduction
 
-Welcome to **Olmo Studio** ("we," "our," "us"). We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+Welcome to **Souveau** ("we," "our," "us"). We value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
 
 ## 2. Information We Collect
 
@@ -56,6 +56,6 @@ We do not knowingly solicit information from or market to children under the age
 
 If you have questions or comments about this Privacy Policy, please contact us at:
 
-**Olmo Studio**  
-Email: hello@olmostudio.com  
+**Souveau**  
+Email: hello@souveau.com  
 Phone: +1 (555) 012-3456

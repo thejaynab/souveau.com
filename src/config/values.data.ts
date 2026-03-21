@@ -7,27 +7,27 @@ export type Value = {
 
 export const values: Value[] = [
   {
-    title: 'Creative Excellence',
+    title: 'Practical Approach',
     description:
-      "We push creative boundaries to deliver designs that inspire emotion and reflect the true essence of every brand we build.",
+      "Our approach is 100% practical, useful, and actionable. We don't deliver fluff — every recommendation is something your team can act on immediately.",
     icon: 'light',
     image: 'https://images.unsplash.com/photo-1707157281599-d155d1da5b4c?q=80&w=2070&auto=format&fit=crop',
   },
   {
-    title: 'Strategic Thinking',
+    title: 'User-Centered Thinking',
     description:
-      'Every decision is driven by insight and purpose, ensuring each project aligns creativity with measurable business growth.',
+      'Every decision is driven by what users actually need — not assumptions. We use real data and user behavior to validate whether your features solve actual problems.',
     icon: 'brain',
   },
   {
-    title: 'Meaningful Collaboration',
+    title: 'Strategic Partnership',
     description:
-      "We believe great results come from teamwork, transparency, and shared vision between our team and our clients.",
+      "We step in as a partner, not a vendor. Our work is balanced, unbiased, and brings a fresh perspective free from internal politics.",
     icon: 'handshake',
   },
   {
-    title: 'Lasting Impact',
-    description: 'We push creative boundaries to deliver designs that inspire emotion and reflect the true essence of every brand we build.',
+    title: 'Measurable Impact',
+    description: 'We focus on outcomes that matter: lower churn, higher conversion rates, faster development cycles, and products users actually want to use.',
     icon: 'stars',
     image: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop',
   },

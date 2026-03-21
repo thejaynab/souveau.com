@@ -1,0 +1,280 @@
+Professional Services & Digital Products
+
+Brand
+Clean
+Modern
+Professional
+
+Business bank account for payments
+
+Applications/Social Media Accounts
+LinkedIn business page (info only)
+
+souveau.com
+Services business website
+
+
+Consulting Services
+While I will do work end-to-end, frequently what I do is come in and provide insights that they are unable to capture internally usually due to workload, staff limitations or struggles of internal politics. As a paid consultant, I step in as a partner to share insights, knowledge, experience without limitations of worrying about how a manager is going to feel. My work is balanced, unbiased, and a new perspective can be beneficial. 
+
+Focus only on application development
+
+From scratch
+New design: developing a new design for your application balancing business goals, user needs, and any tech limitations. 
+Design system: developing a new design system for your application. Recommend using _____. 
+Requirements mapping
+UX/UI Strategy: This pairs nicely with audit. It provides recommendations on how to apply changes. 
+User pain points (friction points) and opportunities
+
+
+Existing Applications
+These are usually services helpful for an existing team that doesn’t have availability to do this work because they are busy working on features. But this is foundational work that will make future work easier. 
+Research consolidation: Entry and organization. Recommend Airtable but can use whatever platform client prefers.
+Research analysis: What does it all mean? Conclusions and recommendations
+Documentation: Recommend Confluence but am adept at using whatever application works best for company.
+Design System: Organizing existing elements to explain current design
+UX review (audit): explains what the user is currently experiencing in your application. What works, what doesn’t work. 
+UI review (audit): explains inconsistencies in design and miscommunication that can occur with icons, text, images. 
+Info Architecture & user work flows
+
+Skills
+Strategy
+Design Solutions
+Systems
+AI
+
+UI/UX consultants serve as third-party experts who study the issues facing a digital product. Then, they recommend targeted improvements to improve the product’s performance with users. They play vital roles in enhancing user experiences in digital products, by offering a host of services:
+
+
+
+Heuristic Evaluation
+ Prototyping and wireframing
+Aligning UX goals with business objectives
+Implementing design systems
+Sharing evidence-based design recommendations
+
+
+For whom?
+Work with agencies, companies, non-profit organizations…etc. Everything from startups to fully realized application in need of refresh or foundational work.
+
+Problems application businesses face
+poor user experience (UX) leading to churn, 
+Bad UX/UI: Confusing interfaces lead to user frustration, low adoption, and high churn, as seen in major errors from confusing software.
+Inconsistent Experience: Difficulty ensuring uniform performance and design across different devices, screen sizes, and OS versions (iOS vs. Android). 
+integration issues with legacy systems, 
+security threats, 
+data silos, 
+scalability limits, and 
+skill gaps in development, causing productivity loss, high support costs, and missed revenue
+Accessibility
+Requirements (like HIPAA)
+Not willing to pay or unable to pay for user testing
+
+How can we help?
+When users struggle with your product
+Cut through the confusion and clean up the clutter with expert help.
+Our data-driven redesign service is informed by research so we can make truly meaningful changes in flows and navigation.
+
+When you SaaS feels clunky, but it’s core to your business
+Our experts excel at streamlining dashboards, self-serve flows, and complex data visualizations.
+Get a smoother experience for both new customers and power users.
+
+When you need a user-friendly onboarding flow
+We simplify complex onboarding processes into intuitive step-by-step experiences to reduce drop-offs and increase your user retention.
+
+When you need better data visualization on your dashboards
+We visualize complex data in clear, actionable ways, which ensures that both new and power users can find value quickly, even on data-heavy interfaces.
+Inspiration from competitors websites:
+
+The work we do is designed to meet your specific goals. We don’t sell packages or reuse templates. If we recommend adopting strategic AI solutions, the concept will be tailored to your company’s unique needs.[1]
+
+Explore how we approach the art and science of designing digital products that fulfill user needs and target business goals.[2]
+
+Have a project? Contact
+
+Benefits:
+- accelerate your roadmap
+- Optimize expenses by implementing the right UX processes, methods, and tools
+
+
+Design Systems
+ 
+Our team excels at design systems thinking, whether developing one from scratch, leveraging an existing system for a new initiative, or refining an existing system to enhance consistency and scalability. Design systems created with Very include:
+- Visual language primitives
+- Component libraries for interfaces
+- Guidelines for data visualization
+- Standardized practices for both hardware and software [3]
+
+Want to speak with a Very expert?
+Discover our integrated approach that combines AI solutions, hardware innovation, and design to turn your data into intelligent automation in the cloud and on the edge.
+1. Book a Meeting [4]
+2. Book a Discovery Call
+3. Book an Intro Call
+4. Partner with a UX Consultant
+5. Let’s Talk
+6. Contact Us
+
+Simple, transparent pricing, because we hate wasting time fishing for quotes as much as you do. No overcharging, no surprise fees, no padded hours, no agency theatrics.[5]
+
+Paid 50% upfront, 50% at concept approval [6]
+Paid in advance, month-to-month
+5% discount for 3-month advance payments
+Paid in milestones, 30-50% upfront
+Delivery in 1–3 months, depending on complexity
+Paid upfront
+Delivered in 1-3 weeks
+
+UI & UX design partner[7]
+UI/UX Product design partner
+
+What’s your refund policy?
+Because this is a bespoke service, refunds aren’t possible — but we do everything we can to make your decision low-risk. You can judge our work by our portfolio and verified reviews on Clutch, and there’s zero obligation to continue beyond what you’ve paid for. You get exactly what you purchased, no lock-ins, no long-term commitments. [8]
+
+Practical approach: Our approach is 100% practical, useful and actionable. [9]
+
+Design systems save time and resources by offering reusable building blocks for creating digital products. Instead of starting from scratch each time, your teams can rely on proven components, which makes development faster, reduces errors, and strengthens consistency.
+This  allows your businesses to launch products or new features sooner, improve usability, and gain a competitive advantage.
+Although a design system requires continuous maintenance, it’s an investment that delivers long-term value—helping organizations scale their design efforts and keep up with evolving brand needs. We can get you started and show you how to proceed. [10]
+
+The role of a UI/UX consultant is to ensure that the designer’s approach aligns with:
+- Users’ needs
+- What is technically feasible for the design team
+- Business goals and limitations [11]
+
+UX Audit
+Our UX audit service involves a comprehensive evaluation of your digital products to identify usability issues. We provide actionable insights and recommendations to enhance user satisfaction, streamline navigation, and improve overall performance. [12]
+
+Analyzing user interactions to identify opportunities for improvement
+
+Blend strategy, creativity, data, AI, and tech. [13]
+
+Reinvent your business and realize exceptional experiences that win hearts and move markets.
+
+UX consulting services help you identify and fix the usability issues that frustrate your users and hurt your growth. [14]
+
+great UX strategy can reduce churn, increase conversions, and align your team.
+
+The problem? Many great products fail, not because they don’t work, but because they’re hard to trust, understand, or use. In today’s competitive digital landscape, where 88% of users won’t return to a site after a bad experience, UX isn’t a luxury, it’s a necessity. https://www.forrester.com/report/The-Six-Steps-For-Justifying-Better-UX/RES117708
+
+You built the thing so you know how it’s supposed to work. But your users don’t. And they won’t tell you either. They’ll just leave. 91% of unhappy clients who don’t complain, they just disappear without leaving feedback.
+
+User Experience (UX) consulting services involve professional evaluation, strategy, and guidance to improve how users interact with digital products such as websites, apps, or platforms. 
+
+Make your product easier to use so that your customers don’t leave. That’s it. But the implications are huge:
+
+- Lower churn: Users leave frustrating experiences quickly. If users understand and trust the product, they stay.
+- Higher conversion rates: When UX is smooth, people complete actions like signups, checkouts, etc. Small design changes based on user insights often lead to major improvements in revenue. “A well-designed user experience can raise conversion rates by up to 400%” 
+- Faster development: Fewer design/development cycles wasted on fixing the wrong things. 
+- Validate Product Ideas: UX consultants use real data and user behavior to validate whether your features solve actual problems.
+- Internal alignment: UX consultants help teams stop arguing over opinions and focus on what users actually need.
+- Gain a Competitive Edge: In saturated markets, superior UX is a differentiator. Think Apple, Airbnb, or Spotify.
+
+Whether you’re a startup, an enterprise, or scaling a SaaS platform, UX consulting becomes critical when: 
+
+- You’ve launched but adoption is flat.
+- You’re redesigning a product and want to avoid past mistakes.
+- Users say your app is “confusing” or “cluttered.”
+- Support is getting basic how-to questions.
+- You want to validate an MVP before scaling.
+- You might think, “We’ll figure it out ourselves.”  That works until you realize you’ve been optimizing the wrong thing for 6 months and have wasted huge amounts of resources. 
+
+A UX consulting firm can bring clarity and expertise that internal teams may lack especially when building across multiple platforms.
+
+UX consulting solves issues like user drop-off, low engagement, confusing flows, and unclear calls to action. It uncovers usability issues through research and recommends fixes.
+
+Is UX consulting worth it for startups?
+Absolutely. Startups benefit most because early user feedback can help avoid expensive pivots or redesigns later.
+
+Can UX consulting be done remotely?
+Yes. Most UX audits, interviews, and testing can be conducted remotely using digital tools like Zoom, Figma, Maze, and Hotjar.
+
+What does a UX consultant do?
+They analyze your product’s user experience, identify friction points, and offer strategic solutions to improve usability and engagement.
+
+How much does UX consulting cost?
+It varies. Freelancers may charge 50-150/hr, while agencies charge 5K-50K+ per project depending on scope.
+
+When should I hire a UX consultant?
+Ideally before launching or relaunching a digital product. But even mature products can benefit from UX audits and optimization.
+
+
+If you’re a SaaS founder without a technical or design background, product decisions can feel like educated guessing. You might know the user problem better than anyone, but translating that vision into an intuitive experience often leads to confusion, rework, or features that fail to take hold.
+
+That’s where a UX consulting partner steps in. Their role isn’t just about visual polish; it’s about helping define what success looks like through the user’s eyes.
+
+A UX consultant helps you clarify the core experience your product should deliver. Instead of jumping straight to features, they work with you to map the journey: what the user needs, where they might get stuck, and how to guide them toward value. They also help identify friction points early, often before they appear in your metrics, by using tools like usability tests or feedback audits to understand where users are struggling and why.
+
+Just as importantly, UX consultants bring focus. When there’s a long list of possible changes, they help prioritize the improvements that will actually move the needle, whether it’s activation, retention, or reduced support tickets. And for many founders, they serve as a critical bridge between vision and execution. UX consultants can translate high-level goals into flows and requirements your dev team can run with.
+
+For non-technical founders, UX consulting brings clarity, confidence, and strategic alignment without requiring you to become a UX expert.
+
+How to Know If You Need UX Consulting
+You don’t need a massive UX budget to justify expert help. If your product has traction or should have traction but isn’t clicking with users, a consultant might be your fastest path to clarity.
+
+Ask yourself:
+
+Users are signing up… but not sticking around?
+→ You might have an activation or onboarding problem that design alone can’t fix.
+Are you unsure why users abandon key flows?
+→ Drop-off without insight often signals deeper UX friction that needs diagnosing.
+Have you redesigned multiple times with slight improvements?
+→ When new designs don’t move the metrics, it’s time to revisit the strategy, not the UI.
+Is retention falling as you scale?
+→ Growth magnifies UX issues. What worked at 100 users might break at 1,000.
+Are you making product calls based on guesses rather than user behavior?
+→ Without structured feedback and guidance, it’s easy to build in the dark.
+You built an MVP, but engagement feels flat?
+→ A UX consultant can help you rework flows, clarify value, and test what users really want.
+If any of these sound familiar, you don’t need another redesign; you need a UX strategy.
+
+
+What’s the difference between a UX designer and a UX consultant?
+A UX designer is focused on creating screens, flows, and visual interactions. A UX consultant works at a more strategic level, helping define product direction, validate assumptions, improve usability, and align user needs with business goals. 
+
+Do I need a UX consultant if I already have a product designer?
+If your designer is deeply immersed in execution (mockups, components, Figma), a UX consultant brings a broader perspective: framing problems, analyzing user behavior, conducting discovery, or helping prioritize what to build next.
+
+When’s the right time to bring in UX consulting?
+If you're seeing poor activation, retention, or user confusion but don’t know why, it’s time. It’s also valuable during MVP planning, or before major redesigns.
+
+Is UX consulting only for big companies?
+Not at all. In fact, early-stage and scaling SaaS founders often benefit the most. UX consultants help you avoid costly missteps, move faster with more confidence, and build products that solve real user problems without bloated dev cycles.
+
+Clarity Over Guesswork Wins
+At some point, every founder hits the same wall: We built what we thought users needed… but something’s not clicking. That’s where a UX consultant steps in, not to redesign buttons or polish pixels, but to help you understand your users more deeply and design with intention.
+
+A UX consulting partner helps you see what users feel and translate that into smarter product decisions, better activation, and stronger retention. Instead of guessing what to build next, you’re building with confidence, backed by real insight.
+
+For non-technical founders, especially, UX strategy can be the difference between a product that quietly fades and one that scales. [15]
+
+
+
+[1]: Fresh Consulting https://www.freshconsulting.com/
+
+[2]: Fresh Consulting https://www.freshconsulting.com/
+
+[3]: Fresh Consulting https://www.freshconsulting.com/
+
+[4]: Fresh Consulting https://www.freshconsulting.com/
+
+[5]: Studio Contrast https://www.contrast.studio/
+
+[6]: Studio Contrast: Pricing https://www.contrast.studio/pricing
+
+[7]: Studio Contrast https://www.contrast.studio/
+
+[8]: Studio Contrast: Pricing https://www.contrast.studio/pricing
+
+[9]: Nielsen Norman Group: Consulting https://www.nngroup.com/consulting/
+
+[10]: UX Studio Team: UX Consulting https://www.uxstudioteam.com/ux-consulting
+
+[11]: Top 6 UI/UX Consulting Services Companies, Medium https://medium.com/@designstudiouiux/top-6-ui-ux-consulting-services-companies-59dd3474b351
+
+[12]: Top 6 UI/UX Consulting Services Companies, Medium https://medium.com/@designstudiouiux/top-6-ui-ux-consulting-services-companies-59dd3474b351
+
+[13]: Frog https://www.frog.co/
+
+[14]: reloaded https://reloadux.com/blog/ux-consulting-services-benefits/
+
+[15]: designli.com https://designli.co/blog/what-does-a-ux-consulting-partner-actually-do

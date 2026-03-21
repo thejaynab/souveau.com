@@ -21,7 +21,7 @@ export default defineConfig({
   },
 
   integrations: [react(), sitemap(), icon()],
-  site: 'https://olmo-studio.vercel.app',
+  site: 'https://souveau.com',
   output: 'server',
   adapter: vercel()
 });

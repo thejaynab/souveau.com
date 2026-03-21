@@ -1,7 +1,7 @@
 // labels.ts - Only text
 export const labels = {
-  'company.name': 'Olmo Studio',
-  'company.short.name': 'Olmo',
+  'company.name': 'Souveau',
+  'company.short.name': 'Souveau',
 
   'nav.mobile.follow': 'Follow Us',
 
@@ -16,14 +16,13 @@ export const labels = {
   'footer.other': 'Other',
   'footer.get.starter': 'Get Started',
   'footer.bottombar.one': 'All Rights Reserved.',
-  'footer.bottombar.three': 'Olmo Studio',
-
+  'footer.bottombar.three': 'Souveau, LLC',
 
   //CTA
-  'cta.title': 'READY TO START TODAY?',
-  'cta.description': "Let's turn your ideas into a powerful digital experience. Share your project details and I'll help you get started right away.",
-  'cta.btn': 'Contact Now',
-  'cta.marqueetext': 'BRING IDEAS TO LIFE',
+  'cta.title': 'READY TO IMPROVE YOUR PRODUCT?',
+  'cta.description': "Cut through the confusion and clean up the clutter with expert UX consulting. Share your project details and let's build a better experience for your users.",
+  'cta.btn': 'Book a Discovery Call',
+  'cta.marqueetext': 'CLARITY OVER GUESSWORK',
 
   //FAQ
   'faq.title': 'Answering your questions',
@@ -31,30 +30,30 @@ export const labels = {
   'faq.marqueetext': 'QUICK HELP',
 
   //Index Page (HOME)
-  'index.h1': 'creative digital, design studio.',
+  'index.h1': 'UX consulting for digital products.',
   'index.about.marqueetext': 'ABOUT US',
-  'index.about.title': 'We design digital experiences that empower 𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃 brands to stand out and engage their audiences™.',
-  'index.about.description': 'By combining strategy, design, and technology, we transform ideas into meaningful digital experiences. Our work blends imagination with precision to create bold outcomes that drive growth.',
+  'index.about.title': 'We help digital product teams identify and fix the usability issues that frustrate users and hurt growth.',
+  'index.about.description': 'As a paid consultant, we step in as a partner to share insights, knowledge, and experience without the limitations of internal politics. Our work is balanced, unbiased, and focused on what your users actually need.',
   'index.about.btn': 'More About Us',
-  'index.partners.title': 'GLOBAL PARTNERS :',
-  'index.chose.us.title': 'Choose excellence',
-  'index.chose.us.description': 'We combine creativity, strategy, and precision to deliver work that stands out and drives results. With a focus on quality and clear communication.',
-  'index.chose.us.marqueetext': 'WHY CHOSE US',
-  'index.services.title': 'Creative Solutions',
-  'index.services.description': 'We craft thoughtful digital experiences through design, branding, and development, helping businesses grow with clarity and creativity.',
+  // 'index.partners.title': 'GLOBAL PARTNERS :',
+  'index.chose.us.title': 'Why work with us',
+  'index.chose.us.description': 'We blend strategy, creativity, data, and technology to deliver actionable insights that drive real results. Our approach is 100% practical, useful, and actionable.',
+  'index.chose.us.marqueetext': 'WHY SOUVEAU',
+  'index.services.title': 'How We Help',
+  'index.services.description': 'UX consulting services that help you identify and fix the usability issues that frustrate your users and hurt your growth. From audits to strategy to design systems.',
   'index.services.marqueetext': 'OUR SERVICES',
-  'index.works.title': 'Selected Work',
-  'index.works.description': 'Explore a collection of high-quality, innovative designs crafted to elevate brands and captivate audiences. Each project reflects our commitment to creativity and excellence.',
-  'index.works.marqueetext': 'OUR WORKS',
-  'index.testimonials.title': 'Shared Success',
-  'index.testimonials.description': 'What our clients say about us',
-  'index.testimonials.marqueetext': 'TESTIMONIALS',
+  'index.works.title': 'Case Studies',
+  'index.works.description': 'Explore how we approach the art and science of designing digital products that fulfill user needs and target business goals.',
+  'index.works.marqueetext': 'OUR WORK',
+  // 'index.testimonials.title': 'Shared Success',
+  // 'index.testimonials.description': 'What our clients say about us',
+  // 'index.testimonials.marqueetext': 'TESTIMONIALS',
 
   //Works Page
-  'works.h1': 'Creative Showcase',
-  'works.description': 'We’re a passionate team of creatives, strategists, and tech experts.',
-  'works.marqueetext': 'Our Portfolio',
-  'work.slug.btn.back': 'Back to Works',
+  'works.h1': 'Our Work',
+  'works.description': 'Data-driven UX solutions for digital products across industries.',
+  'works.marqueetext': 'Case Studies',
+  'work.slug.btn.back': 'Back to Work',
   'work.slug.btn.view.live': 'View Live',
   'work.slug.btn.view.website': 'Website',
   'work.slug.label.client': 'Client:',
@@ -65,21 +64,21 @@ export const labels = {
   'work.slug.btn.top': 'Back to Top',
 
   //Studio Page
-  'studio.h1': 'Inside Our Studio',
-  'studio.about.title': 'From Vision to Impact, Crafting Brands That Inspire and Endure',
-  'studio.about.description': 'Born from a passion for design and innovation, we set out to redefine how brands communicate in the digital era. What started as a small creative studio evolved into a full-service branding agency — blending strategy, art, and technology to craft experiences that inspire and endure.',
+  'studio.h1': 'About Souveau',
+  'studio.about.title': 'Clarity Over Guesswork — Helping Product Teams Build With Confidence',
+  'studio.about.description': 'Souveau was founded on a simple belief: great products fail not because they don\'t work, but because they\'re hard to trust, understand, or use. We provide the outside perspective that internal teams often lack — stepping in as a strategic partner to uncover what users actually need and translate that into smarter product decisions.',
   'studio.about.marqueetext': 'OUR STORY',
-  'studio.values.title': 'Vision Pillars',
-  'studio.values.description': 'We believe in the power of design to transform businesses. Our approach combines creativity, strategy, and technology to deliver meaningful digital experiences that drive real impact.',
+  'studio.values.title': 'What We Believe',
+  'studio.values.description': 'In today\'s competitive digital landscape, where 88% of users won\'t return after a bad experience, UX isn\'t a luxury — it\'s a necessity. We bring clarity, confidence, and strategic alignment to every engagement.',
   'studio.values.marqueetext': 'OUR VALUES',
-  'studio.work.process.title': 'Work Process',
-  'studio.work.process.marqueetext': 'How we work',
-  'studio.team.title': 'Design Experts',
-  'studio.team.marqueetext': 'Team Members',
+  'studio.work.process.title': 'How We Work',
+  'studio.work.process.marqueetext': 'Our Process',
+  // 'studio.team.title': 'Design Experts',
+  // 'studio.team.marqueetext': 'Team Members',
 
   //Contact Page
-  'contact.h1': 'We\'re here to help',
-  'contact.description': 'For any inquiries or to explore your vision further, we invite you to contact our professional team using the details provided below.',
+  'contact.h1': 'Let\'s Talk',
+  'contact.description': 'Have a project in mind? Whether you need a UX audit, design system, or strategic consultation, we\'d love to hear from you.',
   'contact.office': 'Office',
   'contact.email': 'Email',
   'contact.phone': 'Telephone',
@@ -89,38 +88,32 @@ export const labels = {
   //404 Page
   '404.h1': '404',
   '404.h2': 'Page Not Found',
-  '404.description': 'Oops! The page you\'re looking for seems to have wandered off into the solar system. Don\'t worry, we\'ll help you get back on track.',
+  '404.description': 'Oops! The page you\'re looking for seems to have wandered off. Don\'t worry, we\'ll help you get back on track.',
   '404.back.btn': 'Back to Home',
   '404.contact.btn': 'Contact Us',
   '404.quick.link': 'Or explore these pages:',
 
   //Meta (seo)
-  // --- INDEX / HOME ---
-  'meta.index.title': 'Olmo Studio',
-  'meta.index.description': 'Elevate your brand with Olmo Studio. We combine data-driven strategy with premium digital design to scale your business through SEO, high-converting PPC, and cutting-edge branding.',
-  'meta.index.keywords': 'Olmo Studio, Digital Design Agency, Premium Branding, Data-Driven Marketing, SEO for Tech, Growth Strategy, Creative Direction, Performance Marketing, Digital Transformation',
+  'meta.index.title': 'Souveau | UX Consulting for Digital Products',
+  'meta.index.description': 'Souveau helps product teams identify and fix usability issues that frustrate users and hurt growth. Expert UX consulting, audits, design systems, and strategy.',
+  'meta.index.keywords': 'UX Consulting, UX Audit, UI/UX Consultant, Design Systems, User Experience Strategy, Product Design Partner, SaaS UX, Application Design, UX Research',
 
-  // --- SERVICES ---
-  'meta.services.title': 'Olmo Studio | Services',
-  'meta.services.description': 'End-to-end digital solutions designed for growth. From SEO optimization and PPC management to bespoke social media strategies and brand identity that converts.',
-  'meta.services.keywords': 'Bespoke Branding Services, Performance SEO, Full-Service Digital Agency, Custom Content Strategy, Paid Media Management, UX/UI Design, Conversion Optimization, Digital Advertising',
+  'meta.services.title': 'Souveau | Services',
+  'meta.services.description': 'From UX audits and design systems to research analysis and information architecture — practical, actionable UX consulting services for digital products.',
+  'meta.services.keywords': 'UX Audit, Design Systems, UX Strategy, UI Review, Information Architecture, User Research, Heuristic Evaluation, Wireframing, Prototyping',
 
-  // --- STUDIO ---
-  'meta.studio.title': 'Olmo Studio | Studio',
-  'meta.studio.description': 'Meet the team behind the results. We are a collective of strategists and designers dedicated to transforming data into compelling brand stories and market-leading digital presences.',
-  'meta.studio.keywords': 'Olmo Studio Team, Creative Strategy Boutique, Brand Consultants, Digital Innovation Lab, Data-Led Design, Marketing Storytellers, Design Thinking, Creative Leadership',
+  'meta.studio.title': 'Souveau | About',
+  'meta.studio.description': 'Souveau is a UX consulting firm that helps product teams build better digital experiences. We provide the outside perspective internal teams often lack.',
+  'meta.studio.keywords': 'UX Consultant, About Souveau, UX Strategy Partner, Product Design Consultant, User Experience Expert, Digital Product Consulting',
 
-  // --- CONTACT ---
-  'meta.contact.title': 'Olmo Studio | Contact',
-  'meta.contact.description': 'Ready to lead your industry? Book a strategy consultation or a free digital audit. Let’s build your brand’s future together.',
-  'meta.contact.keywords': 'Hire Digital Agency, Brand Audit, Marketing Strategy Consultation, Work with Olmo Studio, Digital Growth Quote, Business Inquiry, Marketing Partner',
+  'meta.contact.title': 'Souveau | Contact',
+  'meta.contact.description': 'Ready to improve your product experience? Book a discovery call or send us your project details.',
+  'meta.contact.keywords': 'Hire UX Consultant, Book Discovery Call, UX Audit Quote, UX Consulting Inquiry, Partner with Souveau, Product Design Help',
 
-  // --- WORK ---
-  'meta.work.title': 'Olmo Studio | Portfolio',
-  'meta.work.description': 'Real results for ambitious brands. Explore our portfolio of high-ROI campaigns, visual identity transformations, and SEO success stories that drive measurable growth.',
-  'meta.work.keywords': 'Design Portfolio, Marketing Case Studies, Branding Showcase, SEO Results, Digital Campaign Examples, ROI-Driven Design, Client Success Stories, Visual Identity Portfolio',
+  'meta.work.title': 'Souveau | Work',
+  'meta.work.description': 'See how we help product teams solve real usability challenges. Case studies showcasing UX audits, design systems, and strategic consulting engagements.',
+  'meta.work.keywords': 'UX Case Studies, Design System Portfolio, UX Audit Examples, Product Design Work, User Experience Results, SaaS Redesign',
 
-  // --- 404 ---
   'meta.404.title': '404 - Page Not Found',
   'meta.404.description': 'The page you\'re looking for doesn\'t exist.',
   

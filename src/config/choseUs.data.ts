@@ -1,4 +1,4 @@
-import tabletImage  from '../assets/chose-us-tablet.webp';
+import tabletImage from '../assets/chose-us-tablet.webp';
 import teamImage from '../assets/chose-us-team.webp';
 import type { ImageMetadata } from "astro";
 
@@ -11,27 +11,27 @@ export type ChoseUs = {
 
 export const choseUs: ChoseUs[] = [
   {
-    title: 'Fast turnarounds',
+    title: 'Accelerate Your Roadmap',
     description:
-      "Timelines are respected here. Expect quick handoffs, clear communication, and momentum that doesn't stall.",
+      "Fewer design/development cycles wasted on fixing the wrong things. We help you validate ideas with real data before you commit resources.",
     icon: 'clock',
     image: tabletImage,
   },
   {
-    title: 'Design that Converts',
+    title: 'Reduce User Churn',
     description:
-      'Good design looks great and works better. We prioritize performance and user goals.',
+      'Users leave frustrating experiences quickly. We identify friction points and fix them so your users understand, trust, and stay with your product.',
     icon: 'chart',
   },
   {
-    title: 'Committed to Perfection',
+    title: 'Increase Conversions',
     description:
-      "We iterate and refine until the result is exactly what you need.",
+      "When UX is smooth, people complete actions. Small design changes based on user insights often lead to major improvements in revenue.",
     icon: 'star',
   },
   {
-    title: 'Quality over quantity',
-    description: 'We take on fewer projects so each one gets the attention, detail, and care it deserves.',
+    title: 'Gain Competitive Edge',
+    description: 'In saturated markets, superior UX is a differentiator. We help you stand out by building products users actually want to use.',
     icon: 'lightning',
     image: teamImage,
   },
