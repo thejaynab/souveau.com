@@ -1,0 +1,27 @@
+.input {
+  @apply bg-secondary w-full rounded-xl border border-white/10 px-6 py-4 text-white transition-all duration-300 outline-none;
+}
+
+.input:focus {
+  @apply border-white/40 bg-[#2a2a2a];
+}
+
+.input::placeholder {
+  @apply text-primary/70;
+}
+
+.label {
+  @apply font-boldonse text-primary block text-base md:text-lg;
+}
+
+.text-area {
+  @apply bg-secondary resize-none w-full rounded-xl border border-white/10 px-6 py-4 text-white transition-all duration-300 outline-none;
+}
+
+.text-area:focus {
+  @apply border-white/40 bg-[#2a2a2a];
+}
+
+.text-area::placeholder {
+  @apply text-primary/70;
+}

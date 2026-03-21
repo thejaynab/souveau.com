@@ -1,0 +1,14 @@
+---
+import { choseUs } from '@/config/choseUs.data';
+import FeatureGrid from '@/components/common/FeatureGrid.astro';
+import { t } from '@/lib/utils';
+---
+
+<FeatureGrid
+  id="why-choose-us"
+  marqueeText={t('index.chose.us.marqueetext')}
+  title={t('index.chose.us.title')}
+  description={t('index.chose.us.description')}
+  items={choseUs}
+  dark
+/>

@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import ContactSection from '@/components/sections/contact/ContactSection.astro';
+import Faq from '@/components/common/Faq.astro';
+import { t } from '@/lib/utils';
+---
+
+<Layout
+  title={t('meta.contact.title')}
+  description={t('meta.contact.description')}
+  keywords={t('meta.contact.keywords')}
+>
+  <ContactSection />
+  <Faq />
+</Layout>

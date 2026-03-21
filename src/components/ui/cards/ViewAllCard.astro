@@ -1,0 +1,25 @@
+---
+import { t } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  variant?: 'mobile' | 'desktop';
+}
+
+const { variant = 'desktop' } = Astro.props;
+
+const isMobile = variant === 'mobile';
+const containerHeight = isMobile ? 'aspect-4/3' : 'h-full';
+---
+
+<div
+  class={`project-card group border border-muted/50 bg-secondary relative flex w-full flex-col items-center justify-center gap-6 overflow-hidden rounded-2xl p-6 text-primary transition-all hover:scale-[1.02] ${containerHeight}`}
+>
+  <div class="flex size-16 items-center justify-center transition-transform group-hover:-rotate-45 md:size-20">
+    <Icon name="arrow" class="size-8 md:size-10" />
+  </div>
+  <h3 class="font-boldonse max-w-sm text-center text-xl leading-normal uppercase md:text-3xl lg:text-5xl">
+    {t('card.view.all.work')}
+  </h3>
+  <a href="/works" class="absolute inset-0 z-10" aria-label="View all projects"></a>
+</div>

@@ -1,0 +1,102 @@
+---
+import MarqueeText from '@/components/common/MarqueeText.astro';
+import { workProcess } from '@/config/workProcess.data';
+import { t } from '@/lib/utils';
+---
+
+<section id="work-process" class="bg-body text-primary px-4 py-24 lg:py-32">
+  <div class="container mx-auto space-y-10 md:space-y-16">
+    <!-- Header -->
+    <div class="header-content space-y-6 text-center">
+      <div class="marquee-wrapper mx-auto w-fit">
+        <MarqueeText text={t('studio.work.process.marqueetext')} dark />
+      </div>
+      <h2 class="font-boldonse section-title text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+        {t('studio.work.process.title')}
+      </h2>
+    </div>
+
+    <!-- cards -->
+    <div class="cards-container grid grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        workProcess.map((item) => (
+          <div class="work-card bg-secondary border-muted-light/20 space-y-24 rounded-2xl border p-6">
+            <span class="text-muted-light font-boldonse card-number block text-4xl leading-relaxed">0{item.id}</span>
+            <div class="card-content space-y-4">
+              <h3 class="font-boldonse text-2xl">{item.title}</h3>
+              <p class="text-muted-light text-base leading-relaxed md:text-lg">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from('.marquee-wrapper', {
+    opacity: 0,
+    y: -50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '#work-process',
+      start: 'top 75%',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  gsap.from('.section-title', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.section-title',
+      start: 'top 80%',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  gsap.from('.work-card', {
+    opacity: 0,
+    y: 80,
+    scale: 0.95,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.cards-container',
+      start: 'top 80%',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  gsap.from('.card-number', {
+    opacity: 0,
+    x: -30,
+    duration: 0.6,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: '.cards-container',
+      start: 'top 75%',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  gsap.from('.card-content', {
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    stagger: 0.2,
+    delay: 0.3,
+    scrollTrigger: {
+      trigger: '.cards-container',
+      start: 'top 75%',
+      toggleActions: 'play none none none',
+    },
+  });
+</script>

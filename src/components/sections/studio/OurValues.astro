@@ -1,0 +1,13 @@
+---
+import { values } from '@/config/values.data';
+import FeatureGrid from '@/components/common/FeatureGrid.astro';
+import { t } from '@/lib/utils';
+---
+
+<FeatureGrid
+  id="our-values"
+  marqueeText={t('studio.values.marqueetext')}
+  title={t('studio.values.title')}
+  description={t('studio.values.description')}
+  items={values}
+/>

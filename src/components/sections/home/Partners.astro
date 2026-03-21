@@ -1,0 +1,108 @@
+---
+import { partners } from '@/config/partners.data';
+import { t } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="partners-section" class="container mx-auto space-y-7 border-t border-gray-300 px-4 py-24 lg:py-32">
+  <!-- Title -->
+  <h3 class="partners-title text-muted text-center font-mono text-lg uppercase opacity-0">
+    {t('index.partners.title')}
+  </h3>
+
+  <!-- Partners Grid -->
+  <div class="partners-grid grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
+    {
+      partners.map((partner, index) => (
+        <div class="partner-card rounded-xl border border-gray-100 bg-white p-8 opacity-0" data-index={index}>
+          <div class="flex h-full items-center justify-center">
+            <Icon name={`logo-brands/${partner.logo}`} class="partner-icon h-8 w-auto grayscale" />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let cleanupFn: (() => void) | null = null;
+
+  const initPartners = () => {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+
+    const section = document.querySelector<HTMLElement>('#partners-section');
+    if (!section) return;
+
+    const title = section.querySelector<HTMLElement>('.partners-title');
+    const cards = section.querySelectorAll<HTMLElement>('.partner-card');
+
+    if (!cards.length) return;
+
+    // Reset elements
+    if (title) {
+      gsap.set(title, { opacity: 0, y: 20 });
+    }
+    cards.forEach((card) => {
+      gsap.set(card, { opacity: 0, y: 40 });
+    });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        });
+
+        // Animate title
+        if (title) {
+          tl.to(title, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power3.out',
+          });
+        }
+
+        // Animate cards with stagger
+        tl.to(
+          cards,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: {
+              each: 0.08,
+              from: 'start',
+            },
+            ease: 'power3.out',
+          },
+          '-=0.3',
+        );
+      }, section);
+
+      cleanupFn = () => {
+        ctx.revert();
+        if (title) gsap.set(title, { clearProps: 'all' });
+        cards.forEach((card) => gsap.set(card, { clearProps: 'all' }));
+      };
+    } else {
+      // Show immediately for reduced motion
+      if (title) title.style.opacity = '1';
+      cards.forEach((card) => (card.style.opacity = '1'));
+    }
+  };
+
+  initPartners();
+  document.addEventListener('astro:page-load', initPartners);
+</script>

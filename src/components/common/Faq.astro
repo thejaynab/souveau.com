@@ -1,0 +1,24 @@
+---
+import { t } from '@/lib/utils';
+import MarqueeText from './MarqueeText.astro';
+import { faqs } from '@/config/faq.data';
+import Accordion from '../ui/Accordion.astro';
+---
+
+<section id="faq-section" class="container mx-auto space-y-10 px-4 py-24 md:space-y-16 lg:py-32">
+  <div class="space-y-6 text-center">
+    <div class="mx-auto w-fit">
+      <MarqueeText text={t('faq.marqueetext')} />
+    </div>
+    <h2 class="services-title font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+      {t('faq.title')}
+    </h2>
+    <p class="services-description text-muted mx-auto max-w-2xl text-base leading-relaxed md:text-xl">
+      {t('faq.description')}
+    </p>
+  </div>
+
+  <div class="mx-auto max-w-4xl space-y-4">
+    {faqs.map((faq, index) => <Accordion faq={faq} index={index} />)}
+  </div>
+</section>

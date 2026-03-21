@@ -1,0 +1,52 @@
+/* ============================================
+   BUTTON EFFECTS
+   ============================================ */
+
+.btn-effect {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ============================================
+   SHADOW OFFSET EFFECTS
+   ============================================ */
+
+.btn-shadow-offset {
+  box-shadow: 0.3em 0.3em 0 var(--color-orange);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-orange);
+    color: var(--color-light);
+    box-shadow: -0.3em -0.3em 0 var(--color-light);
+  }
+}
+
+.btn-shadow-offset-dark {
+  box-shadow: 0.3em 0.3em 0 var(--color-orange);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-orange);
+    color: var(--color-light);
+    box-shadow: -0.3em -0.3em 0 var(--color-dark);
+  }
+}
+
+/* ============================================
+   BACKGROUND FILL VERTICAL
+   ============================================ */
+
+.btn-bg-fill-vertical {
+  transition: all 0.5s;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: inset 0 -2.5em 0 0 var(--color-orange),
+                inset 0 2.5em 0 0 var(--color-orange);
+    color: var(--color-light);
+  }
+}

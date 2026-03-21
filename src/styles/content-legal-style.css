@@ -1,0 +1,127 @@
+.content-legal-style {
+  color: inherit;
+  font-family: var(--font-inter);
+  line-height: 1.8;
+}
+
+/* Headings */
+.content-legal-style h1 {
+  font-size: 2.5rem; /* ~40px */
+  font-family: var(--font-boldonse);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.content-legal-style h2 {
+  font-size: 1.75rem; /* ~28px */
+  font-family: var(--font-boldonse);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.content-legal-style h3 {
+  font-size: 1.4rem; /* ~22px */
+  font-family: var(--font-boldonse);
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: inherit;
+  text-transform: uppercase;
+}
+
+.content-legal-style h4 {
+  font-size: 1.2rem; /* ~19px */
+  font-family: var(--font-boldonse);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+/* Paragraphs */
+.content-legal-style p {
+  margin-bottom: 2rem;
+  font-size: 1rem; /* 16px - Standard readable size for legal */
+  color: var(--color-muted-light); /* Softer reading text */
+}
+
+/* Lists */
+.content-legal-style ul,
+.content-legal-style ol {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  color: var(--color-muted-light);
+}
+
+.content-legal-style ul {
+  list-style-type: disc;
+}
+
+.content-legal-style ol {
+  list-style-type: decimal;
+}
+
+.content-legal-style li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.content-legal-style li::marker {
+  color: var(--color-orange);
+}
+
+/* Links */
+.content-legal-style a {
+  color: var(--color-orange);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.content-legal-style a:hover {
+  opacity: 0.8;
+}
+
+/* Blockquotes for Important Notes */
+.content-legal-style blockquote {
+  border-left: 4px solid var(--color-orange);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 1.375rem;  /* 22px  */
+  opacity: 0.9;
+}
+
+/* Strong and emphasis */
+.content-legal-style strong {
+  font-weight: 700;
+  color: white; /* Highlight key terms */
+}
+
+.content-legal-style em {
+  font-style: italic;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-legal-style h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .content-legal-style h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .content-legal-style p,
+  .content-legal-style li {
+    font-size: 0.95rem; /* ~15px */
+    margin-bottom: 1.5rem;
+  }
+}

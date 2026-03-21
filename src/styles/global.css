@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "./button-effects.css";
+@import "./content-style.css";
+@import "./inputs.css";
+@import "./content-legal-style.css";
+
+@font-face {
+  font-family: 'Boldonse';
+  src: url('/fonts/Boldonse-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-boldonse: 'Boldonse', 'Arial Narrow', sans-serif;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* Fondos y Superficies */
+  --color-primary: #F9F8F6;
+  --color-secondary: #191919;
+
+  /* Tipografía */
+  --color-body: #0A0A0A;
+  --color-muted: #4B5563;
+  --color-muted-light: #9CA3AF;
+
+  /* Botones */
+  --color-orange: #C2410C; /*C2410C*/
+  --color-dark: #191919;
+  --color-light: #F9F8F6; /*faf9f5*/
+}
+
+@layer base {
+  body {
+    @apply bg-primary font-inter text-body;
+  }
+}

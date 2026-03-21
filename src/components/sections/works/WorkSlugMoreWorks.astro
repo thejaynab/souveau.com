@@ -1,0 +1,60 @@
+---
+import MarqueeText from '@/components/common/MarqueeText.astro';
+import Button from '@/components/ui/buttons/Button.astro';
+import ProjectCard from '@/components/ui/cards/ProjectCard.astro';
+import { t } from '@/lib/utils';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  sortedProjects: CollectionEntry<'projects'>[];
+  currentIndex: number;
+}
+
+const { sortedProjects, currentIndex } = Astro.props;
+
+let nextProjects = [];
+
+if (sortedProjects.length > 1) {
+  const totalProjects = sortedProjects.length;
+  const nextIndex = (currentIndex + 1) % totalProjects;
+  const prevIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+
+  if (nextIndex !== currentIndex) {
+    nextProjects.push(sortedProjects[nextIndex]);
+  }
+
+  if (prevIndex !== currentIndex && nextProjects.length < 2) {
+    nextProjects.push(sortedProjects[prevIndex]);
+  }
+}
+---
+
+{
+  nextProjects.length > 0 && (
+    <section class="bg-body text-primary py-24 md:py-32">
+      <div class="mx-auto max-w-7xl space-y-10 md:space-y-16">
+        <div class="space-y-6 text-center">
+          <div class="mx-auto w-fit">
+            <MarqueeText text={t('work.slug.marqueetext')} dark />
+          </div>
+          <h2 class="font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+            {t('work.slug.moreWork')}
+          </h2>
+          <Button href="/works" variant="secondary" effect="shadowOffset" size="lg">
+            {t('work.slug.btn.all')}
+          </Button>
+        </div>
+
+        <div class="mx-4 grid gap-8 md:grid-cols-2 xl:mx-0">
+          {nextProjects.map((nextProject) => (
+            <ProjectCard
+              href={nextProject.id}
+              title={nextProject.data.title}
+              coverImage={nextProject.data.coverImage}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

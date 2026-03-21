@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@/assets/olmo-logo.webp';
+---
+
+<div id="loading-screen" class="loading-screen">
+  <Image src={logo} alt="Olmo Studio" class="loading-logo h-auto w-96" />
+</div>
+
+<style>
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-body);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .loading-logo {
+    animation: pulse-logo 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-logo {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(0.98);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .loading-logo {
+      width: 150px;
+    }
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+
+  // Track when the page started loading
+  const startTime = Date.now();
+  const minDisplayTime = 500; // 0.5 second minimum
+  const maxWaitTime = 6000; // Maximum time to wait for video (6 seconds)
+
+  // State to track loading conditions
+  let pageLoaded = false;
+  let videoReady = false;
+  let animationTriggered = false;
+
+  // Check if hero video exists on the page
+  const hasHeroVideo = () => document.getElementById('hero-video') !== null;
+
+  const hideLoadingScreen = () => {
+    // Prevent double triggering
+    if (animationTriggered) return;
+    animationTriggered = true;
+
+    const loadingScreen = document.getElementById('loading-screen');
+
+    if (loadingScreen) {
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+
+      // Wait for remaining time to ensure minimum display duration
+      setTimeout(() => {
+        // Animate slide up with GSAP
+        gsap.to(loadingScreen, {
+          y: '-100%',
+          duration: 0.8,
+          ease: 'power2.inOut',
+          onComplete: () => {
+            loadingScreen.remove();
+            // Dispatch event to signal hero to animate
+            window.dispatchEvent(new Event('loadingComplete'));
+          },
+        });
+      }, remainingTime);
+    }
+  };
+
+  const checkReadyToHide = () => {
+    // If there's a hero video, wait for both page load and video ready
+    // If there's no hero video, just wait for page load
+    if (pageLoaded && (videoReady || !hasHeroVideo())) {
+      hideLoadingScreen();
+    }
+  };
+
+  // Wait for the page to be fully loaded
+  window.addEventListener('load', () => {
+    pageLoaded = true;
+    checkReadyToHide();
+  });
+
+  // Wait for the hero video to be ready
+  window.addEventListener('heroVideoReady', () => {
+    videoReady = true;
+    checkReadyToHide();
+  });
+
+  // Fallback: hide loading screen after max wait time regardless of video
+  setTimeout(() => {
+    if (!animationTriggered) {
+      console.warn('Loading screen timeout reached, hiding anyway');
+      hideLoadingScreen();
+    }
+  }, maxWaitTime);
+</script>

@@ -1,0 +1,85 @@
+---
+import { t } from '@/lib/utils';
+---
+
+<section class="relative z-0 h-[70vh] w-full overflow-hidden">
+  <video
+    id="hero-video"
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+    muted
+    autoplay
+    loop
+    playsinline
+    transition:persist
+  >
+    <source src="/videos/video-two.mp4" type="video/mp4" />
+  </video>
+
+  <div class="pointer-events-none absolute inset-0 bg-black opacity-30"></div>
+
+  <div id="hero-content" class="relative z-10 flex h-full items-baseline-last justify-center p-4 lg:p-8">
+    <div class="w-full overflow-hidden text-center">
+      <h1 id="hero-title" class="text-primary font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+        {t('studio.h1')}
+      </h1>
+    </div>
+  </div>
+</section>
+<script>
+  import gsap from 'gsap';
+
+  // Emit event when hero video is ready to play
+  const heroVideo = document.getElementById('hero-video') as HTMLVideoElement;
+
+  if (heroVideo) {
+    // Check if video is already loaded (cached)
+    if (heroVideo.readyState >= 3) {
+      window.dispatchEvent(new Event('heroVideoReady'));
+    } else {
+      // Wait for the video to have enough data to play
+      heroVideo.addEventListener(
+        'canplaythrough',
+        () => {
+          window.dispatchEvent(new Event('heroVideoReady'));
+        },
+        { once: true },
+      );
+
+      // Fallback: if video takes too long, emit event after 5 seconds
+      setTimeout(() => {
+        window.dispatchEvent(new Event('heroVideoReady'));
+      }, 5000);
+    }
+  } else {
+    // No video on this page, emit event immediately
+    window.dispatchEvent(new Event('heroVideoReady'));
+  }
+
+  // Hero animation setup
+  const heroTitle = document.getElementById('hero-title');
+  const heroContent = document.getElementById('hero-content');
+
+  if (heroTitle && heroContent) {
+    // Set initial state - hidden
+    gsap.set(heroTitle, {
+      y: 100,
+      opacity: 0,
+    });
+
+    // Listen for loading complete event
+    window.addEventListener(
+      'loadingComplete',
+      () => {
+        // Animate hero title entrance
+        gsap.to(heroTitle, {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          delay: 0.2,
+        });
+      },
+      { once: true },
+    );
+  }
+</script>

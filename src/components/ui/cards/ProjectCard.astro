@@ -1,0 +1,36 @@
+---
+import { t } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  title: string;
+  coverImage: string;
+  href: string;
+}
+
+const { title, coverImage, href } = Astro.props;
+---
+
+<article class="group bg-secondary border-muted/50 relative w-full overflow-hidden rounded-2xl border">
+  <div class="m-3 flex items-center justify-between rounded-xl bg-[#242424] p-4 md:m-6">
+    <div class="text-primary flex items-center gap-3">
+      <Icon name="asterisk" class="hidden h-6 w-6 md:block" />
+      <span class="font-boldonse text-sm uppercase md:text-lg">{title}</span>
+    </div>
+    <Icon name="arrow" class="h-4 w-4 transition-transform group-hover:-rotate-45 md:h-6 md:w-6" />
+  </div>
+  <div class="aspect-4/3 w-full overflow-hidden px-3 pb-3 md:px-6 md:pb-6">
+    <div class="relative h-full w-full overflow-hidden rounded-2xl">
+      <img src={coverImage} alt={title} class="h-full w-full object-cover" loading="lazy" />
+      <div
+        class="absolute inset-x-0 bottom-0 flex h-full items-center justify-center rounded-2xl bg-black/15 transition-all duration-200 group-hover:backdrop-blur-sm group-hover:backdrop-brightness-75"
+      >
+        <div class="hidden items-center gap-2 group-hover:flex">
+          <span class="text-primary font-boldonse text-base uppercase md:text-lg">{t('card.view.work')}</span>
+          <Icon name="arrow" class="h-4 w-4 transition-transform group-hover:-rotate-45 md:h-8 md:w-8" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href={href} class="absolute inset-0 z-10" aria-label={`View ${title} project`}></a>
+</article>

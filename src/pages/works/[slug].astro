@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Layout from '@/layouts/Layout.astro';
+import WorkSlugContent from '@/components/sections/works/WorkSlugContent.astro';
+import WorkSlugMoreWorks from '@/components/sections/works/WorkSlugMoreWorks.astro';
+import Cta from '@/components/common/Cta.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const currentIndex = sortedProjects.findIndex((p) => p.id === project.id);
+---
+
+<Layout title={project.data.title} description={project.data.description}>
+  <WorkSlugContent project={project}>
+    <Content />
+  </WorkSlugContent>
+  <WorkSlugMoreWorks sortedProjects={sortedProjects} currentIndex={currentIndex} />
+  <Cta dark />
+</Layout>

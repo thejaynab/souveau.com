@@ -1,0 +1,162 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { t } from '@/lib/utils';
+import MarqueeText from '@/components/common/MarqueeText.astro';
+import { ItemHoverImagesEffect } from '@/components/common/ItemHoverImagesEffect';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  services: CollectionEntry<'services'>[];
+}
+
+const { services } = Astro.props;
+
+const hoverImages = services.map((service) => ({
+  id: service.id,
+  title: service.data.title,
+  coverImage: service.data.image,
+}));
+---
+
+<section id="services-section" class="container mx-auto space-y-10 px-4 py-24 md:space-y-16 lg:py-32">
+  <div class="space-y-6 text-center">
+    <div class="mx-auto w-fit">
+      <MarqueeText text={t('index.services.marqueetext')} />
+    </div>
+    <h2 class="services-title font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+      {t('index.services.title')}
+    </h2>
+    <p class="services-description text-muted mx-auto max-w-2xl text-base leading-relaxed md:text-xl">
+      {t('index.services.description')}
+    </p>
+  </div>
+  <div class="hidden md:block">
+    <ItemHoverImagesEffect client:load items={hoverImages} />
+  </div>
+  <div
+    id="services-list-section"
+    class="divide-muted-light border-muted-light mx-auto flex max-w-7xl flex-col divide-y border-y"
+  >
+    {
+      services.map((service) => (
+        <a
+          href={`/${service.id}`}
+          class="service-item group flex items-center justify-between px-4 py-4 md:px-6 md:py-6"
+        >
+          <h3 class="service-title font-boldonse text-2xl leading-normal md:text-4xl lg:text-5xl">
+            {service.data.title}
+          </h3>
+          <Icon name="arrow" class="service-arrow text-body size-7 -rotate-45 md:size-9" />
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initServicesAnimation() {
+    gsap.from('.services-title', {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.services-title',
+        start: 'top 80%',
+      },
+    });
+
+    gsap.from('.services-description', {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.services-description',
+        start: 'top 80%',
+      },
+    });
+
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    gsap.from(serviceItems, {
+      x: -50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#services-list-section',
+        start: 'top 70%',
+      },
+    });
+
+    serviceItems.forEach((item) => {
+      const title = item.querySelector('.service-title');
+      const arrow = item.querySelector('.service-arrow');
+
+      const hoverTimeline = gsap.timeline({ paused: true });
+
+      hoverTimeline
+        .to(
+          title,
+          {
+            x: 12,
+            duration: 0.2,
+            ease: 'power2.out',
+          },
+          0,
+        )
+        .to(
+          arrow,
+          {
+            x: 5,
+            y: -5,
+            scale: 1,
+            duration: 0.2,
+            ease: 'power2.out',
+          },
+          0,
+        );
+
+      item.addEventListener('mouseenter', () => {
+        hoverTimeline.play();
+      });
+
+      item.addEventListener('mouseleave', () => {
+        hoverTimeline.reverse();
+      });
+    });
+  }
+
+  // Initialize on load
+  window.addEventListener('load', () => {
+    initServicesAnimation();
+
+    // Dispatch events for React component
+    const section = document.getElementById('services-list-section');
+    const items = document.querySelectorAll('.service-item');
+
+    items.forEach((item, index) => {
+      item.addEventListener('mouseenter', () => {
+        window.dispatchEvent(
+          new CustomEvent('event:item-hover', {
+            detail: { index: index },
+          }),
+        );
+      });
+    });
+
+    if (section) {
+      section.addEventListener('mouseleave', () => {
+        window.dispatchEvent(new CustomEvent('event:item-leave'));
+      });
+    }
+  });
+</script>

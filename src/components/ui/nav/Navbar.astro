@@ -1,0 +1,144 @@
+---
+import { navItems } from '@/config/navItems.data';
+import { MobileMenu } from './MobileMenu';
+import Button from '../buttons/Button.astro';
+import { t } from '@/lib/utils';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="navbar" class="fixed top-1 left-0 z-50 w-full px-1 duration-500 md:top-2">
+  <div id="nav-wrapper" class="mx-auto max-w-full transition-all duration-500">
+    <div
+      id="nav-container"
+      class="relative mx-auto flex w-full items-center justify-between px-4 py-5 transition-all duration-500 md:px-6 lg:px-8 lg:py-8"
+    >
+      <!-- Logo -->
+      <a
+        href="/"
+        id="nav-logo"
+        class="text-primary font-boldonse origin-left text-3xl font-bold tracking-wide uppercase md:text-4xl lg:text-6xl xl:text-7xl"
+        style="will-change: transform;"
+      >
+        {t('company.short.name')}
+      </a>
+
+      <!-- Navigation Links - Desktop only -->
+      <nav class="hidden gap-1 md:flex lg:gap-3">
+        {
+          navItems.slice(0, -1).map((link) => {
+            const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+
+            return (
+              <Button
+                href={link.href}
+                variant="underline"
+                size="md"
+                class={`nav-link font-boldonse text-light uppercase lg:px-8 lg:py-3 ${isActive ? 'decoration-orange underline decoration-2 underline-offset-8' : ''}`}
+              >
+                {link.title}
+              </Button>
+            );
+          })
+        }
+        <Button
+          href={navItems[navItems.length - 1].href}
+          effect="shadowOffset"
+          variant="secondary"
+          size="md"
+          class="lg:px-8 lg:py-3"
+        >
+          {navItems[navItems.length - 1].title}
+        </Button>
+      </nav>
+
+      <!-- Mobile Menu Component -->
+      <MobileMenu client:load />
+    </div>
+  </div>
+</header>
+
+<script>
+  import gsap from 'gsap';
+
+  const navbar = document.getElementById('navbar');
+  const navWrapper = document.getElementById('nav-wrapper');
+  const navContainer = document.getElementById('nav-container');
+  const logo = document.getElementById('nav-logo');
+
+  let isScrolled = false;
+  let scrollTween: gsap.core.Tween | null = null;
+
+  if (navbar && navWrapper && navContainer && logo) {
+    const animateToScrolled = () => {
+      if (scrollTween) scrollTween.kill();
+
+      navWrapper.classList.add('bg-secondary', 'shadow-lg', 'rounded-2xl', 'border', 'border-muted-light/20');
+
+      gsap.to(navWrapper, {
+        maxWidth: '96rem',
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+
+      gsap.to(navContainer, {
+        paddingTop: '0.75rem',
+        paddingBottom: '0.75rem',
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+
+      scrollTween = gsap.to(logo, {
+        scale: 0.65,
+        duration: 0.5,
+        ease: 'power2.out',
+        transformOrigin: 'left center',
+      });
+    };
+
+    const animateToInitial = () => {
+      if (scrollTween) scrollTween.kill();
+
+      navWrapper.classList.remove('bg-secondary', 'shadow-lg', 'rounded-2xl', 'border', 'border-muted-light/20');
+
+      gsap.to(navWrapper, {
+        maxWidth: '100%',
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+
+      gsap.to(navContainer, {
+        paddingTop: window.innerWidth >= 1024 ? '2rem' : '1.25rem',
+        paddingBottom: window.innerWidth >= 1024 ? '2rem' : '1.25rem',
+        duration: 0.5,
+        ease: 'power2.out',
+      });
+
+      scrollTween = gsap.to(logo, {
+        scale: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+        transformOrigin: 'left center',
+      });
+    };
+
+    window.addEventListener('scroll', () => {
+      const shouldBeScrolled = window.scrollY > 50;
+      if (shouldBeScrolled && !isScrolled) {
+        isScrolled = true;
+        animateToScrolled();
+      } else if (!shouldBeScrolled && isScrolled) {
+        isScrolled = false;
+        animateToInitial();
+      }
+    });
+
+    if (window.scrollY > 50) {
+      isScrolled = true;
+      navWrapper.classList.add('bg-secondary', 'shadow-lg', 'rounded-2xl', 'border', 'border-muted-light/20');
+      gsap.set(navWrapper, { maxWidth: '96rem' });
+      gsap.set(navContainer, { paddingTop: '0.75rem', paddingBottom: '0.75rem' });
+      gsap.set(logo, { scale: 0.65, transformOrigin: 'left center' });
+    }
+  }
+</script>

@@ -1,0 +1,14 @@
+---
+import Cta from '@/components/common/Cta.astro';
+import WorkContent from '@/components/sections/works/WorkContent.astro';
+import Layout from '@/layouts/Layout.astro';
+import { t } from '@/lib/utils';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+---
+
+<Layout title={t('meta.work.title')} description={t('meta.work.description')} keywords={t('meta.work.keywords')}>
+  <WorkContent projects={projects} />
+  <Cta dark />
+</Layout>

@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import MarqueeText from './MarqueeText.astro';
+import { cn } from '@/lib/utils';
+
+export type FeatureItem = {
+  title: string;
+  description: string;
+  icon: string;
+  image?: ImageMetadata | string;
+};
+
+interface Props {
+  id: string;
+  marqueeText: string;
+  title: string;
+  description: string;
+  items: FeatureItem[];
+  dark?: boolean;
+}
+
+const { id, marqueeText, title, description, items, dark = false } = Astro.props;
+---
+
+<section id={id} class={cn('feature-grid-section px-4 py-24 lg:py-32', dark && 'bg-body text-primary')}>
+  <div class="container mx-auto space-y-10 md:space-y-16">
+    <!-- Header -->
+    <div class="space-y-6 text-center">
+      <div class="mx-auto w-fit">
+        <MarqueeText text={marqueeText} dark={dark} />
+      </div>
+      <h2 class="font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+        {title}
+      </h2>
+      <p
+        class={cn(
+          'mx-auto max-w-2xl text-base leading-relaxed md:text-xl',
+          dark ? 'text-muted-light' : 'text-muted max-w-3xl',
+        )}
+      >
+        {description}
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3">
+      {
+        items.map((feature, index) => (
+          <div
+            class={cn(
+              'feature-card relative flex h-[380px] flex-col justify-between overflow-hidden rounded-2xl border p-4 md:p-6',
+              dark ? 'bg-dark border-white/5' : 'bg-light border-muted-light',
+              index === 0 && 'md:col-span-2',
+              index === 3 && 'md:col-span-2',
+            )}
+          >
+            {/* Image */}
+            {feature.image && (
+              <div class="pointer-events-none absolute top-0 right-0 h-full w-[65%]">
+                {/* Gradient fade */}
+                <div
+                  class={cn(
+                    'absolute inset-0 z-10 bg-linear-to-r to-transparent',
+                    dark ? 'from-dark via-dark/80' : 'from-light via-light/60',
+                  )}
+                />
+
+                {typeof feature.image === 'string' ? (
+                  // External URL
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    class="h-full w-full object-cover object-[70%_center] opacity-90"
+                    width={900}
+                    height={900}
+                    quality={90}
+                    loading="lazy"
+                  />
+                ) : (
+                  // ImageMetadata (imported from /src/assets)
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    class="h-full w-full object-cover object-[70%_center] opacity-90"
+                    quality={90}
+                    loading="lazy"
+                    inferSize
+                  />
+                )}
+              </div>
+            )}
+
+            {/* Icon */}
+            <div
+              class={cn(
+                'relative z-20 inline-flex h-12 w-12 items-center justify-center rounded-xl',
+                dark ? 'bg-light text-body' : 'bg-dark text-primary',
+              )}
+            >
+              <Icon name={feature.icon} class="h-8 w-8" />
+            </div>
+
+            {/* Content */}
+            <div
+              class={cn(
+                'relative z-20 space-y-4',
+                index === 0 || index === 3 ? 'max-w-[90%] md:max-w-[65%]' : 'max-w-full',
+              )}
+            >
+              <h3 class="font-boldonse text-lg leading-normal md:text-xl lg:text-3xl">{feature.title}</h3>
+              <p class={cn('text-base md:text-lg', dark ? 'text-muted-light' : 'text-muted')}>{feature.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let cleanupFn: (() => void) | null = null;
+
+  const initAnimations = () => {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+
+    const sections = document.querySelectorAll<HTMLElement>('.feature-grid-section');
+
+    sections.forEach((section) => {
+      const cards = section.querySelectorAll('.feature-card');
+      const title = section.querySelector('h2');
+      const text = section.querySelector('p');
+
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none none',
+          },
+        });
+
+        tl.from([title, text], {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+        }).from(
+          cards,
+          {
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power3.out',
+          },
+          '-=0.4',
+        );
+      }, section);
+
+      cleanupFn = () => {
+        ctx.revert();
+      };
+    });
+  };
+
+  initAnimations();
+  document.addEventListener('astro:page-load', initAnimations);
+</script>

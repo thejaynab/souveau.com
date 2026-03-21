@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Layout from '@/layouts/Layout.astro';
+import SlugServices from '@/components/sections/services/SlugServices.astro';
+import Cta from '@/components/common/Cta.astro';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  const services = await getCollection('services');
+
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}) satisfies GetStaticPaths;
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+---
+
+<Layout title={service.data.title} description={service.data.description}>
+  <SlugServices service={service}>
+    <Content />
+  </SlugServices>
+  <Cta />
+</Layout>

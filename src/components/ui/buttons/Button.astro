@@ -1,0 +1,71 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+
+const buttonVariants = cva(
+  'inline-flex items-center justify-center gap-2 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange disabled:pointer-events-none disabled:opacity-50 transition-all duration-300',
+  {
+    variants: {
+      variant: {
+        primary: 'bg-dark text-light hover:bg-light hover:text-dark rounded-xl',
+        secondary: 'bg-light text-dark hover:bg-dark hover:text-light rounded-xl',
+        outline: 'bg-transparent border-2 border-dark text-dark hover:bg-dark hover:text-light rounded-xl',
+        ghost: 'bg-transparent text-dark hover:bg-dark/10 rounded-md',
+        underline:
+          'bg-transparent hover:underline decoration-orange hover:decoration-2 hover:underline-offset-4 transition-all duration-300',
+        none: 'bg-transparent',
+      },
+      size: {
+        none: 'px-2 py-2',
+        sm: 'px-4 py-2 text-xs md:text-sm',
+        md: 'px-6 py-2.5 text-sm md:text-base',
+        lg: 'px-8 py-3 text-base md:text-lg',
+        xl: 'px-12 py-4 text-lg md:text-xl',
+        icon: 'p-2 size-10',
+        underline: 'px-0 py-4 text-lg',
+      },
+      effect: {
+        none: '',
+        shadowOffset: 'btn-effect btn-shadow-offset',
+        shadowOffsetDark: 'btn-effect btn-shadow-offset-dark',
+        bgFillV: 'btn-effect btn-bg-fill-vertical',
+      },
+      active: {
+        true: 'aria-pressed',
+        false: '',
+      },
+    },
+    compoundVariants: [
+      {
+        effect: ['shadowOffset', 'shadowOffsetDark', 'bgFillV'],
+        class: '[&:not(.btn-effect)]:hover:bg-current',
+      },
+    ],
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+      effect: 'none',
+      active: false,
+    },
+  },
+);
+
+interface Props
+  extends HTMLAttributes<'button'>, Omit<HTMLAttributes<'a'>, 'type'>, VariantProps<typeof buttonVariants> {
+  href?: string;
+}
+
+const { variant, size, effect, active, class: className, href, ...rest } = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  class={cn(buttonVariants({ variant, size, effect, active }), className)}
+  href={href}
+  aria-pressed={active ? 'true' : rest['aria-pressed']}
+  {...rest}
+>
+  <slot />
+</Tag>

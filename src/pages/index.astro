@@ -1,11 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { t } from '@/lib/utils';
+import Layout from '@/layouts/Layout.astro';
+import HeroHome from '@/components/sections/home/HeroHome.astro';
+import AboutHome from '@/components/sections/home/AboutHome.astro';
+import Partners from '@/components/sections/home/Partners.astro';
+import ChoseUs from '@/components/sections/home/ChoseUs.astro';
+import Services from '@/components/sections/home/Services.astro';
+import WorksHome from '@/components/sections/home/WorksHome.astro';
+import Testimonials from '@/components/sections/home/Testimonials.astro';
+import Cta from '@/components/common/Cta.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const [services, projects] = await Promise.all([getCollection('services'), getCollection('projects')]);
+const projectFilter = projects.filter((project) => project.data.featured).slice(0, 3);
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={t('meta.index.title')} description={t('meta.index.description')} keywords={t('meta.index.keywords')}>
+  <HeroHome />
+  <div class="bg-primary relative z-10">
+    <AboutHome />
+    <Partners />
+    <ChoseUs />
+    <Services services={services} />
+    <WorksHome projects={projectFilter} />
+    <Testimonials />
+    <Cta dark />
+  </div>
 </Layout>

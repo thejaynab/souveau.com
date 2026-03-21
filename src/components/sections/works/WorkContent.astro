@@ -1,0 +1,31 @@
+---
+import MarqueeText from '@/components/common/MarqueeText.astro';
+import ProjectGrid from '@/components/common/ProjectGrid.astro';
+import { t } from '@/lib/utils';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="bg-body text-primary px-4 py-24 lg:py-32">
+  <div class="container mx-auto space-y-10 pt-8 md:space-y-16 md:pt-16">
+    <!-- Header -->
+    <div class="space-y-6 text-center">
+      <div class="mx-auto w-fit">
+        <MarqueeText text={t('works.marqueetext')} dark />
+      </div>
+      <h1 class="services-title font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+        {t('works.h1')}
+      </h1>
+      <p class="services-description text-muted-light mx-auto max-w-2xl text-base leading-relaxed md:text-xl">
+        {t('works.description')}
+      </p>
+    </div>
+
+    <ProjectGrid projects={projects} />
+  </div>
+</section>

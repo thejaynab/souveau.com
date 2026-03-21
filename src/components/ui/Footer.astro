@@ -1,0 +1,183 @@
+---
+import { navItems, footerOtherItems } from '@/config/navItems.data';
+import { socialLinks, contactInfo } from '@/config/socialLinks.data';
+import { t } from '@/lib/utils';
+import Button from '@/components/ui/buttons/Button.astro';
+---
+
+<footer class="footer-section bg-body text-primary relative z-50 overflow-hidden px-4 pt-20 pb-8 md:px-8">
+  <div class="container mx-auto">
+    <!-- Top Section: Logo & Navigation -->
+    <div class="mb-20 flex flex-col items-start justify-between gap-12 md:mb-32 md:flex-row md:gap-0">
+      <!-- Logo -->
+      <a href="/" class="footer-logo text-primary font-boldonse text-4xl uppercase opacity-0 md:text-8xl">
+        {t('company.short.name')}
+      </a>
+
+      <!-- Navigation Links (Right) -->
+      <nav class="footer-nav text-sm tracking-wide opacity-0">
+        <ul class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-8">
+          <li>
+            <h3 class="text-muted-light mb-2 block uppercase md:mr-4 md:mb-0 md:hidden">{t('footer.navigate')}</h3>
+          </li>
+          {
+            navItems.map((item) => (
+              <li>
+                <Button href={item.href} variant="underline" size="none" class="text-primary font-boldonse uppercase">
+                  {item.title}
+                </Button>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Middle Section: Grid (Follow, Contact, Visit) -->
+    <div class="mb-20 flex flex-col justify-between gap-12 text-sm tracking-wide md:gap-8 lg:flex-row">
+      <!-- Follow -->
+      <div class="footer-col translate-y-4 opacity-0">
+        <h3 class="text-muted-light mb-6 uppercase">{t('footer.follow')}</h3>
+        <ul class="space-y-3">
+          {
+            socialLinks.map((link) => (
+              <li>
+                <Button
+                  href={link.href}
+                  variant="underline"
+                  size="none"
+                  class="text-primary px-0 uppercase"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </Button>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col translate-y-4 opacity-0">
+        <h3 class="text-muted-light mb-6 uppercase">{t('footer.contact')}</h3>
+        <ul class="space-y-3">
+          <li>
+            <Button href="/contact" variant="underline" size="none" class="text-primary px-0 uppercase"
+              >{t('footer.get.starter')}</Button
+            >
+          </li>
+          <li>
+            <Button
+              href={`mailto:${contactInfo.email}`}
+              variant="underline"
+              size="none"
+              class="text-primary px-0 uppercase"
+            >
+              {contactInfo.email}
+            </Button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Visit -->
+      <div class="footer-col translate-y-4 opacity-0">
+        <h3 class="text-muted-light mb-6 uppercase">{t('footer.visit')}</h3>
+        <div class="space-y-1 uppercase">
+          <p>{contactInfo.workingDays}</p>
+          <p>{contactInfo.address.street}</p>
+          <p>{contactInfo.address.city}</p>
+        </div>
+      </div>
+
+      <!-- Other -->
+      <div class="footer-col translate-y-4 opacity-0">
+        <h3 class="text-muted-light mb-6 uppercase">{t('footer.other')}</h3>
+        <ul class="space-y-3">
+          {
+            footerOtherItems.map((item) => (
+              <li>
+                <Button href={item.href} variant="underline" size="none" class="text-primary px-0 uppercase">
+                  {item.title}
+                </Button>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div
+      class="footer-bottom border-muted-light/20 text-muted-light flex flex-col items-center justify-between gap-4 border-t pt-8 text-[10px] uppercase opacity-0 md:flex-row md:text-xs"
+    >
+      <p>{t('footer.bottombar.one')}</p>
+      <p>&copy; {new Date().getFullYear()} {t('footer.bottombar.three')}</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let cleanupFn: (() => void) | null = null;
+
+  function initFooterAnimation() {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+
+    const footer = document.querySelector<HTMLElement>('.footer-section');
+    if (!footer) return;
+
+    const logo = footer.querySelector<HTMLElement>('.footer-logo');
+    const nav = footer.querySelector<HTMLElement>('.footer-nav');
+    const columns = footer.querySelectorAll<HTMLElement>('.footer-col');
+    const bottom = footer.querySelector<HTMLElement>('.footer-bottom');
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: footer,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+      });
+
+      tl.fromTo(logo, { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out' })
+        .fromTo(nav, { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.9, ease: 'power3.out' }, '<')
+        .to(
+          columns,
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'power2.out',
+          },
+          '-=0.4',
+        )
+        .to(
+          bottom,
+          {
+            opacity: 1,
+            duration: 0.6,
+            ease: 'power2.out',
+          },
+          '-=0.5',
+        );
+    }, footer);
+
+    cleanupFn = () => {
+      ctx.revert();
+    };
+  }
+
+  initFooterAnimation();
+  document.addEventListener('astro:page-load', initFooterAnimation);
+</script>

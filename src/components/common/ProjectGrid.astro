@@ -1,0 +1,141 @@
+---
+import ProjectCard from '@/components/ui/cards/ProjectCard.astro';
+import ViewAllCard from '@/components/ui/cards/ViewAllCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+  showViewAll?: boolean;
+}
+
+const { projects, showViewAll = false } = Astro.props;
+
+const createRows = <T,>(items: T[], size: number = 2): T[][] => {
+  const rows: T[][] = [];
+  for (let i = 0; i < items.length; i += size) {
+    rows.push(items.slice(i, i + size));
+  }
+  return rows;
+};
+
+const desktopRows = showViewAll ? createRows([...projects, null]) : createRows([...projects]);
+---
+
+<!-- Mobile Layout: Simple Vertical Stack -->
+<div class="my-auto flex flex-col gap-6 lg:hidden">
+  {
+    projects.map((project) => (
+      <ProjectCard title={project.data.title} coverImage={project.data.coverImage} href={`/works/${project.id}`} />
+    ))
+  }
+  {showViewAll && <ViewAllCard variant="mobile" />}
+</div>
+
+<!-- Desktop Layout: Sticky Stacking Animation -->
+<div class="relative mx-auto my-auto hidden flex-col items-center lg:flex lg:max-w-7xl">
+  {
+    desktopRows.map((row, rowIndex) => (
+      <div
+        class="project-row-wrapper sticky top-32 flex w-full flex-col items-center justify-center"
+        style={`z-index: ${rowIndex + 1};`}
+      >
+        <div class="project-row-content grid w-full origin-top grid-cols-2 gap-6 will-change-transform">
+          {row.map((project) =>
+            project ? (
+              <ProjectCard
+                title={project.data.title}
+                coverImage={project.data.coverImage}
+                href={`/works/${project.id}`}
+              />
+            ) : (
+              <ViewAllCard variant="desktop" />
+            ),
+          )}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .project-row-wrapper {
+    margin-bottom: 5vh;
+  }
+
+  .project-row-wrapper:last-child {
+    margin-bottom: 0;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const BREAKPOINT_DESKTOP = 1024;
+
+  let cleanupFn: (() => void) | null = null;
+
+  const setupStackingAnimation = (): void => {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+
+    if (window.innerWidth < BREAKPOINT_DESKTOP) return;
+
+    const rows = gsap.utils.toArray<HTMLElement>('.project-row-wrapper');
+    const contexts: gsap.Context[] = [];
+
+    rows.forEach((row, index) => {
+      if (index === rows.length - 1) return;
+
+      const nextRow = rows[index + 1];
+      const rowContent = row.querySelector('.project-row-content');
+
+      if (!rowContent || !nextRow) return;
+
+      const ctx = gsap.context(() => {
+        ScrollTrigger.create({
+          trigger: nextRow,
+          start: 'top bottom',
+          end: 'top top+=140',
+          scrub: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const scale = gsap.utils.interpolate(1, 0.95, progress);
+
+            gsap.to(rowContent, {
+              scale,
+              duration: 0.1,
+              overwrite: 'auto',
+            });
+          },
+        });
+      }, row);
+
+      contexts.push(ctx);
+    });
+
+    cleanupFn = () => {
+      contexts.forEach((ctx) => ctx.revert());
+    };
+  };
+
+  setupStackingAnimation();
+
+  document.addEventListener('astro:page-load', setupStackingAnimation);
+  document.addEventListener('astro:before-swap', () => {
+    if (cleanupFn) {
+      cleanupFn();
+      cleanupFn = null;
+    }
+  });
+
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setupStackingAnimation, 250);
+  });
+</script>

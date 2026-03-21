@@ -1,0 +1,107 @@
+---
+import { t } from '@/lib/utils';
+import MarqueeText from '@/components/common/MarqueeText.astro';
+import ContactForm from './ContactForm.astro';
+import ContactInfo from './ContactInfo.astro';
+---
+
+<section id="top-contact" class="text-primary bg-body px-4 py-24 md:py-32">
+  <div class="mx-auto max-w-7xl space-y-10 md:space-y-16">
+    <!-- Header -->
+    <header class="space-y-6 pt-8 text-center md:pt-16">
+      <div class="mx-auto w-fit">
+        <MarqueeText text={t('contact.marqueetext')} dark />
+      </div>
+      <h1 class="font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+        {t('contact.h1')}
+      </h1>
+      <p class="text-muted-light mx-auto max-w-2xl text-base leading-relaxed md:text-xl">
+        {t('contact.description')}
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-38">
+      <!-- Form (Right) -->
+      <div class="contact-form-wrapper translate-y-8 opacity-0">
+        <ContactForm />
+      </div>
+      <!-- Contact Info (Left) -->
+      <ContactInfo />
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const section = document.querySelector('section');
+  const title = section?.querySelector('h1');
+  const description = section?.querySelector('p');
+  const contactItems = section?.querySelectorAll('#contact-info > div');
+  const followUs = section?.querySelector('#follow-us');
+  const form = section?.querySelector('.contact-form-wrapper');
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setInitialState() {
+    if (prefersReducedMotion) return;
+
+    if (title) gsap.set(title, { y: 50, opacity: 0 });
+    if (description) gsap.set(description, { y: 30, opacity: 0 });
+    if (contactItems && contactItems.length > 0) gsap.set(contactItems, { x: -30, opacity: 0 });
+    if (followUs) gsap.set(followUs, { y: 20, opacity: 0 });
+    if (form) gsap.set(form, { y: 20, opacity: 0 }); // reset form initial state here too if needed, though class had it
+  }
+
+  function animateSection() {
+    if (prefersReducedMotion || !section) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 60%',
+        end: 'bottom bottom',
+      },
+    });
+
+    if (title) {
+      tl.to(title, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+    }
+
+    if (description) {
+      tl.to(description, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.6');
+    }
+
+    if (contactItems && contactItems.length > 0) {
+      tl.to(contactItems, { x: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '-=0.4');
+    }
+
+    if (form) {
+      tl.to(form, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, '-=0.4');
+    }
+
+    if (followUs) {
+      tl.to(followUs, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, '-=0.2');
+    }
+  }
+
+  setInitialState();
+
+  // Listen for loading completion
+  window.addEventListener('loadingComplete', () => {
+    animateSection();
+  });
+
+  // Fallback
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loadingScreen = document.getElementById('loading-screen');
+      if (!loadingScreen) {
+        animateSection();
+      }
+    }, 100);
+  });
+</script>

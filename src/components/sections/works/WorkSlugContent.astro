@@ -1,0 +1,98 @@
+---
+import Button from '@/components/ui/buttons/Button.astro';
+import { t } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+const { project } = Astro.props;
+---
+
+<section id="top" class="relative h-[60vh] w-full overflow-hidden">
+  <img src={project.data.coverImage} alt={project.data.title} class="h-full w-full object-cover" />
+  <div class="absolute inset-0 bg-black/40"></div>
+  <!-- Gradient-->
+  <div class="absolute inset-x-0 bottom-0 bg-black/40"></div>
+</section>
+
+{/* Content Section */}
+<section class="container mx-auto space-y-10 px-4 py-16 md:py-24">
+  <div class="mx-auto max-w-5xl pb-6 md:pb-10">
+    <Button href="/works" variant="outline" effect="shadowOffsetDark">
+      <Icon name="arrow" class="h-6 w-6 rotate-180" />{t('work.slug.btn.back')}
+    </Button>
+  </div>
+
+  <div class="mx-auto flex max-w-5xl flex-col items-start gap-4 text-start md:gap-8">
+    <div class="flex flex-wrap gap-3 md:gap-6">
+      {
+        project.data.tags.map((tag: string) => (
+          <span class="text-body text-base font-medium tracking-wider uppercase">#{tag}</span>
+        ))
+      }
+    </div>
+    <h1 class="font-boldonse text-body text-3xl leading-normal uppercase md:text-5xl lg:text-7xl">
+      {project.data.title}
+    </h1>
+
+    <p class="text-body max-w-2xl text-lg md:text-2xl">
+      {project.data.description}
+    </p>
+    <div class="flex flex-wrap items-center gap-3">
+      {
+        project.data.client && (
+          <div class="flex items-center gap-2 rounded-xl bg-[#eeeeee] px-6 py-3 text-sm md:text-base">
+            <span class="text-muted">{t('work.slug.label.client')}</span>
+            <span class="font-medium text-black">{project.data.client}</span>
+          </div>
+        )
+      }
+
+      {
+        project.data.date && (
+          <div class="flex items-center gap-2 rounded-xl bg-[#eeeeee] px-6 py-3 text-sm md:text-base">
+            <span class="text-muted">{t('work.slug.label.year')}</span>
+            <span class="font-medium text-black">{project.data.date?.getFullYear()}</span>
+          </div>
+        )
+      }
+
+      {
+        project.data.clientLink && (
+          <a
+            href={project.data.clientLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 rounded-xl bg-[#eeeeee] px-6 py-3 text-sm transition-colors hover:bg-[#e8e8e8] md:text-base"
+          >
+            <span class="text-muted">{t('work.slug.btn.view.live')}</span>
+            <span class="text-body flex items-center leading-tight font-medium underline underline-offset-4">
+              {t('work.slug.btn.view.website')} <Icon name="link" class="ml-1 h-4 w-4" />
+            </span>
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="content-style mx-auto max-w-5xl">
+    <slot />
+  </div>
+  <div class="mt-12 flex justify-center">
+    <Button href="#top" variant="outline" size="lg" effect="shadowOffset">{t('work.slug.btn.top')}</Button>
+  </div>
+</section>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

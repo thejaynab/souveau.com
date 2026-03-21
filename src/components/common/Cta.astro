@@ -1,0 +1,37 @@
+---
+import { cn, t } from '@/lib/utils';
+import Button from '@/components/ui/buttons/Button.astro';
+import MarqueeText from './MarqueeText.astro';
+
+interface Props {
+  dark?: boolean;
+}
+
+const { dark = false } = Astro.props;
+---
+
+<section class={cn('py-23 md:py-32 px-4 text-center', dark ? 'bg-body text-primary' : 'bg-primary text-body')}>
+  <div class="mx-auto max-w-7xl space-y-6">
+    <div class="mx-auto w-fit">
+      <MarqueeText text={t('cta.marqueetext')} dark={dark} />
+    </div>
+    <h2 class="font-boldonse text-4xl leading-normal uppercase md:text-6xl lg:text-7xl">
+      {t('cta.title')}
+    </h2>
+    <p class={cn('mx-auto max-w-2xl text-base leading-relaxed md:text-xl', dark ? 'text-muted-light' : 'text-muted')}>
+      {t('cta.description')}
+    </p>
+
+    <div class="flex justify-center">
+      <Button
+        href="/contact"
+        size="lg"
+        variant={dark ? 'secondary' : 'primary'}
+        effect={dark ? 'shadowOffset' : 'shadowOffsetDark'}
+        class="min-w-[160px]"
+      >
+        {t('cta.btn')}
+      </Button>
+    </div>
+  </div>
+</section>
