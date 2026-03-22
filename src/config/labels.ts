@@ -3,7 +3,7 @@ export const labels = {
   'company.name': 'Souveau',
   'company.short.name': 'Souveau',
 
-  'nav.mobile.follow': 'Follow Us',
+  'nav.mobile.follow': 'Follow Along',
 
   'card.view.work': 'View work',
   'card.view.all.work': 'View all work',
@@ -20,37 +20,37 @@ export const labels = {
 
   //CTA
   'cta.title': 'READY TO IMPROVE YOUR PRODUCT?',
-  'cta.description': "Cut through the confusion and clean up the clutter with expert UX consulting. Share your project details and let's build a better experience for your users.",
+  'cta.description': "Users are dropping off. Conversions are flat. Something feels off but it\'s hard to pinpoint. A discovery call is the fastest way to get clarity on what\'s holding your product back.",
   'cta.btn': 'Book a Discovery Call',
   'cta.marqueetext': 'CLARITY OVER GUESSWORK',
 
   //FAQ
   'faq.title': 'Answering your questions',
-  'faq.description': 'Got more questions? Send us your enquiry below',
+  'faq.description': 'Got more questions? Send your enquiry below',
   'faq.marqueetext': 'QUICK HELP',
 
   //Index Page (HOME)
   'index.h1': 'UX consulting for digital products.',
-  'index.about.marqueetext': 'ABOUT US',
-  'index.about.title': 'We help digital product teams identify and fix the usability issues that frustrate users and hurt growth.',
-  'index.about.description': 'As a paid consultant, we step in as a partner to share insights, knowledge, and experience without the limitations of internal politics. Our work is balanced, unbiased, and focused on what your users actually need.',
-  'index.about.btn': 'More About Us',
+  'index.about.marqueetext': 'ABOUT SOUVEAU',
+  'index.about.title': 'Product teams know something is off — users churn, support tickets pile up, features get ignored. Souveau finds out why.',
+  'index.about.description': 'Most internal teams are too close to the product to see it clearly. Souveau provides the outside perspective needed to uncover what users actually experience — free from internal politics, assumptions, and legacy thinking.',
+  'index.about.btn': 'The Souveau Approach',
   // 'index.partners.title': 'GLOBAL PARTNERS :',
-  'index.chose.us.title': 'Why work with us',
-  'index.chose.us.description': 'We blend strategy, creativity, data, and technology to deliver actionable insights that drive real results. Our approach is 100% practical, useful, and actionable.',
+  'index.chose.us.title': 'Why Souveau',
+  'index.chose.us.description': 'Strategy, data, and design thinking — combined into actionable insights that drive real results. Every recommendation is practical, useful, and ready to implement.',
   'index.chose.us.marqueetext': 'WHY SOUVEAU',
-  'index.services.title': 'How We Help',
-  'index.services.description': 'UX consulting services that help you identify and fix the usability issues that frustrate your users and hurt your growth. From audits to strategy to design systems.',
-  'index.services.marqueetext': 'OUR SERVICES',
+  'index.services.title': 'How Souveau Helps',
+  'index.services.description': 'UX consulting services that pinpoint and fix the usability issues frustrating your users and hurting your growth. From audits to strategy to design systems.',
+  'index.services.marqueetext': 'SERVICES',
   'index.works.title': 'Case Studies',
-  'index.works.description': 'Explore how we approach the art and science of designing digital products that fulfill user needs and target business goals.',
-  'index.works.marqueetext': 'OUR WORK',
+  'index.works.description': 'Real problems, real products, real results. Explore how Souveau approaches the art and science of improving digital experiences.',
+  'index.works.marqueetext': 'SELECTED WORK',
   // 'index.testimonials.title': 'Shared Success',
-  // 'index.testimonials.description': 'What our clients say about us',
+  // 'index.testimonials.description': 'What clients say about working with Souveau',
   // 'index.testimonials.marqueetext': 'TESTIMONIALS',
 
   //Works Page
-  'works.h1': 'Our Work',
+  'works.h1': 'Selected Work',
   'works.description': 'Data-driven UX solutions for digital products across industries.',
   'works.marqueetext': 'Case Studies',
   'work.slug.btn.back': 'Back to Work',
@@ -66,31 +66,31 @@ export const labels = {
   //Studio Page
   'studio.h1': 'About Souveau',
   'studio.about.title': 'Clarity Over Guesswork — Helping Product Teams Build With Confidence',
-  'studio.about.description': 'Souveau was founded on a simple belief: great products fail not because they don\'t work, but because they\'re hard to trust, understand, or use. We provide the outside perspective that internal teams often lack — stepping in as a strategic partner to uncover what users actually need and translate that into smarter product decisions.',
-  'studio.about.marqueetext': 'OUR STORY',
-  'studio.values.title': 'What We Believe',
-  'studio.values.description': 'In today\'s competitive digital landscape, where 88% of users won\'t return after a bad experience, UX isn\'t a luxury — it\'s a necessity. We bring clarity, confidence, and strategic alignment to every engagement.',
-  'studio.values.marqueetext': 'OUR VALUES',
-  'studio.work.process.title': 'How We Work',
-  'studio.work.process.marqueetext': 'Our Process',
+  'studio.about.description': 'Souveau was founded on a simple belief: great products don\'t fail because they don\'t work — they fail because they\'re hard to trust, understand, or use. Internal teams are often too close to the product to see it clearly. Souveau provides the outside perspective needed to uncover what users actually need and translate that into smarter product decisions.',
+  'studio.about.marqueetext': 'THE STORY',
+  'studio.values.title': 'Guiding Principles',
+  'studio.values.description': 'In today\'s competitive digital landscape, where 88% of users won\'t return after a bad experience, UX isn\'t a luxury — it\'s a necessity. Souveau brings clarity, confidence, and strategic alignment to every engagement.',
+  'studio.values.marqueetext': 'VALUES',
+  'studio.work.process.title': 'The Process',
+  'studio.work.process.marqueetext': 'HOW IT WORKS',
   // 'studio.team.title': 'Design Experts',
   // 'studio.team.marqueetext': 'Team Members',
 
   //Contact Page
   'contact.h1': 'Let\'s Talk',
-  'contact.description': 'Have a project in mind? Whether you need a UX audit, design system, or strategic consultation, we\'d love to hear from you.',
+  'contact.description': 'Have a project in mind? Whether you need a UX audit, design system, or strategic consultation — reach out and let\'s find the right fit.',
   'contact.office': 'Office',
   'contact.email': 'Email',
   'contact.phone': 'Telephone',
-  'contact.follow': 'Follow us',
-  'contact.marqueetext': 'CONTACT US',
+  'contact.follow': 'Follow Along',
+  'contact.marqueetext': 'GET IN TOUCH',
 
   //404 Page
   '404.h1': '404',
   '404.h2': 'Page Not Found',
-  '404.description': 'Oops! The page you\'re looking for seems to have wandered off. Don\'t worry, we\'ll help you get back on track.',
+  '404.description': 'Oops! The page you\'re looking for seems to have wandered off. Let\'s get you back on track.',
   '404.back.btn': 'Back to Home',
-  '404.contact.btn': 'Contact Us',
+  '404.contact.btn': 'Get in Touch',
   '404.quick.link': 'Or explore these pages:',
 
   //Meta (seo)
@@ -103,15 +103,15 @@ export const labels = {
   'meta.services.keywords': 'UX Audit, Design Systems, UX Strategy, UI Review, Information Architecture, User Research, Heuristic Evaluation, Wireframing, Prototyping',
 
   'meta.studio.title': 'Souveau | About',
-  'meta.studio.description': 'Souveau is a UX consulting firm that helps product teams build better digital experiences. We provide the outside perspective internal teams often lack.',
+  'meta.studio.description': 'Souveau is a UX consulting practice that helps product teams build better digital experiences — providing the outside perspective internal teams often lack.',
   'meta.studio.keywords': 'UX Consultant, About Souveau, UX Strategy Partner, Product Design Consultant, User Experience Expert, Digital Product Consulting',
 
   'meta.contact.title': 'Souveau | Contact',
-  'meta.contact.description': 'Ready to improve your product experience? Book a discovery call or send us your project details.',
+  'meta.contact.description': 'Ready to improve your product experience? Book a discovery call or share your project details.',
   'meta.contact.keywords': 'Hire UX Consultant, Book Discovery Call, UX Audit Quote, UX Consulting Inquiry, Partner with Souveau, Product Design Help',
 
   'meta.work.title': 'Souveau | Work',
-  'meta.work.description': 'See how we help product teams solve real usability challenges. Case studies showcasing UX audits, design systems, and strategic consulting engagements.',
+  'meta.work.description': 'See how Souveau helps product teams solve real usability challenges. Case studies showcasing UX audits, design systems, and strategic consulting engagements.',
   'meta.work.keywords': 'UX Case Studies, Design System Portfolio, UX Audit Examples, Product Design Work, User Experience Results, SaaS Redesign',
 
   'meta.404.title': '404 - Page Not Found',

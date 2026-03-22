@@ -7,14 +7,14 @@ tags: ["Research", "Analysis", "Data"]
 
 ## What Does It All Mean?
 
-These are services especially helpful for existing teams that don't have availability to do foundational work because they're busy building features. We consolidate, organize, and analyze your research so you can make informed decisions.
+Your team has research scattered across spreadsheets, Slack threads, and forgotten decks — but no time to make sense of it all. This service is designed for teams too busy building features to do the foundational work. Souveau consolidates, organizes, and analyzes your existing research so your team can make informed decisions.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
   <img src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d?auto=format&fit=crop&w=800" alt="Research Analysis" class="rounded-lg object-cover w-full" />
   <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800" alt="Data Documentation" class="rounded-lg object-cover w-full" />
 </div>
 
-### What We Deliver:
+### What You Get:
 * **Research Consolidation:** Entry, organization, and synthesis of existing research data.
 * **Research Analysis:** Conclusions and recommendations drawn from your data.
 * **Documentation:** Clear, organized documentation your team can reference and build upon.

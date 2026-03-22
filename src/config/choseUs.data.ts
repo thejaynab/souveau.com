@@ -13,14 +13,14 @@ export const choseUs: ChoseUs[] = [
   {
     title: 'Accelerate Your Roadmap',
     description:
-      "Fewer design/development cycles wasted on fixing the wrong things. We help you validate ideas with real data before you commit resources.",
+      "Stop wasting design and development cycles fixing the wrong things. Souveau helps validate ideas with real data before you commit resources.",
     icon: 'clock',
     image: tabletImage,
   },
   {
     title: 'Reduce User Churn',
     description:
-      'Users leave frustrating experiences quickly. We identify friction points and fix them so your users understand, trust, and stay with your product.',
+      'Users leave frustrating experiences fast — often without telling you why. Souveau identifies friction points so your users understand, trust, and stay with your product.',
     icon: 'chart',
   },
   {
@@ -31,7 +31,7 @@ export const choseUs: ChoseUs[] = [
   },
   {
     title: 'Gain Competitive Edge',
-    description: 'In saturated markets, superior UX is a differentiator. We help you stand out by building products users actually want to use.',
+    description: 'In saturated markets, superior UX is a differentiator. Souveau helps you stand out by building products users actually want to use.',
     icon: 'lightning',
     image: teamImage,
   },
