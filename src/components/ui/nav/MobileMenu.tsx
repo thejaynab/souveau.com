@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { socialLinks } from '@/config/socialLinks.data';
 import { navItems } from '@/config/navItems.data';
 import { t } from '@/lib/utils';
+import logoSrc from '@/assets/souveau-white-nobkg.svg';
 
 
 export const MobileMenu = () => {
@@ -245,12 +246,12 @@ export const MobileMenu = () => {
           >
             {/* HEADER */}
             <header className="flex shrink-0 items-center justify-between border-b border-white/10 px-6 py-6">
-              <h2
+              <img
                 id="mobile-menu-title"
-                className="font-boldonse text-2xl tracking-wide text-white uppercase"
-              >
-                {t('company.short.name')}
-              </h2>
+                src={logoSrc.src}
+                alt="Souveau"
+                className="h-6 w-auto"
+              />
               <button
                 ref={closeButtonRef}
                 onClick={handleClose}
