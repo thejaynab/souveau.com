@@ -2,23 +2,11 @@
 import { t } from '@/lib/utils';
 ---
 
-<section class="fixed top-0 left-0 z-0 h-dvh w-full overflow-hidden">
-  <video
-    id="hero-video"
-    class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-    muted
-    autoplay
-    loop
-    playsinline
-    transition:persist
-  >
-    <source src="/videos/video-one.mp4" type="video/mp4" />
-  </video>
+<section class="fixed top-0 left-0 z-0 h-dvh w-full overflow-hidden" style="background-color: rgb(10, 10, 10);">
+  <!-- video removed -->
 
-  <div class="pointer-events-none absolute inset-0 bg-black opacity-30"></div>
-
-  <div id="hero-content" class="relative z-10 flex h-full items-baseline-last justify-between p-4 lg:p-8">
-    <div class="w-full overflow-hidden md:max-w-5xl">
+  <div id="hero-content" class="relative z-10 flex h-full items-center justify-center p-4 lg:p-8">
+    <div class="w-full overflow-hidden text-center">
       <h1 id="hero-title" class="text-primary font-boldonse text-4xl leading-normal uppercase lg:text-6xl xl:text-8xl">
         {t('index.h1')}
       </h1>
@@ -32,32 +20,8 @@ import { t } from '@/lib/utils';
 <script>
   import gsap from 'gsap';
 
-  // Emit event when hero video is ready to play
-  const heroVideo = document.getElementById('hero-video') as HTMLVideoElement;
-
-  if (heroVideo) {
-    // Check if video is already loaded (cached)
-    if (heroVideo.readyState >= 3) {
-      window.dispatchEvent(new Event('heroVideoReady'));
-    } else {
-      // Wait for the video to have enough data to play
-      heroVideo.addEventListener(
-        'canplaythrough',
-        () => {
-          window.dispatchEvent(new Event('heroVideoReady'));
-        },
-        { once: true },
-      );
-
-      // Fallback: if video takes too long, emit event after 5 seconds
-      setTimeout(() => {
-        window.dispatchEvent(new Event('heroVideoReady'));
-      }, 5000);
-    }
-  } else {
-    // No video on this page, emit event immediately
-    window.dispatchEvent(new Event('heroVideoReady'));
-  }
+  // No video — emit ready event immediately
+  window.dispatchEvent(new Event('heroVideoReady'));
 
   // Hero animation setup
   const heroTitle = document.getElementById('hero-title');
