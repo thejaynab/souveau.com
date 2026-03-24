@@ -1,5 +1,5 @@
 ---
-title: "Research & Analysis"
+title: "Research Analysis"
 description: "Making sense of your existing user data and turning it into actionable insights."
 image: "https://images.unsplash.com/photo-1670761301226-675b7cebd5b7?q=80&w=2564&auto=format&fit=crop"
 tags: ["Research", "Analysis", "Data"]

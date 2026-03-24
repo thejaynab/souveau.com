@@ -25,7 +25,7 @@
   --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* Fondos y Superficies */
-  --color-primary: #009d4c;
+  --color-primary: #F9F8F6;
   --color-secondary: #191919;
 
   /* Tipografía */
@@ -34,7 +34,7 @@
   --color-muted-light: #9CA3AF;
 
   /* Botones */
-  --color-orange: #C2410C; /*C2410C*/
+  --color-orange: #009d4c; /*was #C2410C*/
   --color-dark: #191919;
   --color-light: #F9F8F6; /*faf9f5*/
 }
